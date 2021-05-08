@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'maven-publish'
 }
 
 group 'draylar'
@@ -23,4 +24,20 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'draylar'
+            artifactId = 'jvoronoi'
+            version = project.version
+            from components.java
+        }
+    }
 }
