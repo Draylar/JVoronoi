@@ -6,12 +6,7 @@ plugins {
 }
 
 group 'draylar'
-version '1.0.0'
-
-javafx {
-    version = "15.0.1"
-    modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.web' ]
-}
+version '1.0.1'
 
 repositories {
     mavenCentral()
@@ -24,6 +19,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+
+    javafx {
+        version = "15.0.1"
+        modules = [ 'javafx.base', 'javafx.graphics' ]
+    }
 }
 
 java {
